@@ -268,6 +268,13 @@
   </url>
   
   <url>
+    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/hutool/</loc>
+    <lastmod>2023-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
     <lastmod>2023-09-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -311,13 +318,6 @@
   
   <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8/</loc>
-    <lastmod>2023-09-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/hutool/</loc>
     <lastmod>2023-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
