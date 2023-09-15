@@ -9,7 +9,7 @@
   <meta name="description" content="与MBG的区别MyBatis 的代码生成器可生成: 实体类、Mapper 接口、Mapper 映射文件 MP 的代码生成器可生成: 实体类(可以选择是否支持 AR)、Mapper 接口、Mapper 映射文件、 Service 层、Controller 层. 相比MBG，MP只需要进行纯Java代码的编写即可生成代码  MP生成器步骤注：此处使用的是2.3版本的mybatis-plus，MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatisPlus的代码生成器模板（IDEA+MAVEN）">
-<meta property="og:url" content="http://blank-ys.github.io/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/index.html">
+<meta property="og:url" content="http://blank-ys.github.io/Blank-ys.github.io/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/index.html">
 <meta property="og:site_name" content="Blank-ys">
 <meta property="og:description" content="与MBG的区别MyBatis 的代码生成器可生成: 实体类、Mapper 接口、Mapper 映射文件 MP 的代码生成器可生成: 实体类(可以选择是否支持 AR)、Mapper 接口、Mapper 映射文件、 Service 层、Controller 层. 相比MBG，MP只需要进行纯Java代码的编写即可生成代码  MP生成器步骤注：此处使用的是2.3版本的mybatis-plus，MySQL">
 <meta property="og:locale" content="zh_CN">
@@ -22,10 +22,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://blank-ys.github.io/images/2481606-20210819172449594-1328125827.png">
   
-    <link rel="alternate" href="/atom.xml" title="Blank-ys" type="application/atom+xml">
+    <link rel="alternate" href="/Blank-ys.github.io/atom.xml" title="Blank-ys" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/Blank-ys.github.io/favicon.png">
   
   
     
@@ -33,11 +33,11 @@
 
   
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/Blank-ys.github.io/css/style.css">
 
   
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/Blank-ys.github.io/fancybox/jquery.fancybox.min.css">
 
   
   
@@ -51,7 +51,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Blank-ys</a>
+        <a href="/Blank-ys.github.io/" id="logo">Blank-ys</a>
       </h1>
       
     </div>
@@ -59,20 +59,20 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/Blank-ys.github.io/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/Blank-ys.github.io/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/Blank-ys.github.io/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
         
         <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Blank-ys.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Blank-ys.github.io/Blank-ys.github.io"></form>
       </div>
     </div>
   </div>
@@ -81,12 +81,12 @@
       <div class="outer">
         <section id="main"><article id="post-MyBatisPlus的代码生成器模板（IDEA-MAVEN）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/" class="article-date">
+    <a href="/Blank-ys.github.io/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/" class="article-date">
   <time class="dt-published" datetime="2023-09-15T12:45:17.000Z" itemprop="datePublished">2023-09-15</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/MyBatisPlus/">MyBatisPlus</a>
+    <a class="article-category-link" href="/Blank-ys.github.io/categories/MyBatisPlus/">MyBatisPlus</a>
   </div>
 
   </div>
@@ -113,16 +113,16 @@
 <h3 id="导入依赖"><a href="#导入依赖" class="headerlink" title="导入依赖"></a>导入依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--junit--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>4.13<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--mysql--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.20<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--log4j--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--c3p0--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.5.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--spring--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-orm<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--Apache velocity</span></span><br><span class="line"><span class="comment">MP 的代码生成器默认使用的是 Apache 的 Velocity 模板</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.velocity<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>velocity-engine-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--slf4j</span></span><br><span class="line"><span class="comment">查看日志输出信息</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="Java测试代码模板"><a href="#Java测试代码模板" class="headerlink" title="Java测试代码模板"></a>Java测试代码模板</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.enums.IdType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.AutoGenerator;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.DataSourceConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.GlobalConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.PackageConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.StrategyConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.DbType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestMP</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 代码生成 示例代码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testGenerator</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//1.全局配置</span></span><br><span class="line">        <span class="type">GlobalConfig</span> <span class="variable">config</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GlobalConfig</span>();</span><br><span class="line">        config.setActiveRecord(<span class="literal">true</span>) <span class="comment">//是否支持AR模式</span></span><br><span class="line">            .setAuthor(<span class="string">&quot;blank&quot;</span>)     <span class="comment">//作者</span></span><br><span class="line">            .setOutputDir(<span class="string">&quot;项目根路径的绝对路径\\src\\main\\java&quot;</span>)     <span class="comment">//生成路径</span></span><br><span class="line">            .setFileOverride(<span class="literal">true</span>)      <span class="comment">//文件覆盖</span></span><br><span class="line">            .setIdType(IdType.AUTO)     <span class="comment">//主键策略</span></span><br><span class="line">            .setServiceName(<span class="string">&quot;%sService&quot;</span>)     <span class="comment">//设置生成的service接口的名字的首字母是否为I(IEmployeeService)，此处为不设置首字母为I</span></span><br><span class="line">            .setBaseResultMap(<span class="literal">true</span>)         <span class="comment">//SQL映射文件中生成的</span></span><br><span class="line">            .setBaseColumnList(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.数据源配置</span></span><br><span class="line">        <span class="type">DataSourceConfig</span> <span class="variable">dsConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceConfig</span>();</span><br><span class="line">        dsConfig.setDbType(DbType.MYSQL) <span class="comment">//设置数据库类型</span></span><br><span class="line">                .setDriverName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>)</span><br><span class="line">                .setUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/数据库名?serverTimezone=UTC&quot;</span>)</span><br><span class="line">                .setUsername(<span class="string">&quot;用户名&quot;</span>)</span><br><span class="line">                .setPassword(<span class="string">&quot;密码&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.策略配置</span></span><br><span class="line">        <span class="type">StrategyConfig</span> <span class="variable">stConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StrategyConfig</span>();</span><br><span class="line">        stConfig.setCapitalMode(<span class="literal">true</span>)       <span class="comment">//开启全局大写命名</span></span><br><span class="line">                .setDbColumnUnderline(<span class="literal">true</span>) <span class="comment">//指定表明 字段名是否使用下划线</span></span><br><span class="line">                .setNaming(NamingStrategy.underline_to_camel)   <span class="comment">//数据库表映射到实体的命名策略</span></span><br><span class="line">                .setTablePrefix(<span class="string">&quot;tbl_&quot;</span>)</span><br><span class="line">                .setInclude(<span class="string">&quot;tbl_employee&quot;</span>);    <span class="comment">//指定需要生成代码的数据库表</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.包名策略配置</span></span><br><span class="line">        <span class="type">PackageConfig</span> <span class="variable">pkConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PackageConfig</span>();</span><br><span class="line">        pkConfig.setParent(<span class="string">&quot;com.atguigu.mp&quot;</span>)</span><br><span class="line">                .setMapper(<span class="string">&quot;mapper&quot;</span>)</span><br><span class="line">                .setService(<span class="string">&quot;service&quot;</span>)</span><br><span class="line">                .setController(<span class="string">&quot;controller&quot;</span>)</span><br><span class="line">                .setEntity(<span class="string">&quot;beans&quot;</span>)</span><br><span class="line">                .setXml(<span class="string">&quot;mapper&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5.整合配置</span></span><br><span class="line">        <span class="type">AutoGenerator</span> <span class="variable">ag</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AutoGenerator</span>();</span><br><span class="line">        ag.setGlobalConfig(config)</span><br><span class="line">            .setDataSource(dsConfig)</span><br><span class="line">            .setStrategy(stConfig)</span><br><span class="line">            .setPackageInfo(pkConfig);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//6.执行</span></span><br><span class="line">        ag.execute();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="最后执行代码即可"><a href="#最后执行代码即可" class="headerlink" title="最后执行代码即可"></a>最后执行代码即可</h3><p>生成结果如下所示<br><img src="/../images/2481606-20210819172449594-1328125827.png"></p>
+<h3 id="最后执行代码即可"><a href="#最后执行代码即可" class="headerlink" title="最后执行代码即可"></a>最后执行代码即可</h3><p>生成结果如下所示<br><img src="/Blank-ys.github.io/../images/2481606-20210819172449594-1328125827.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/" data-id="clmkrz4hs000bs4ad3mbvfpez" data-title="MyBatisPlus的代码生成器模板（IDEA+MAVEN）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/Blank-ys.github.io/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/" data-id="clmks20pl000bwsadd6ow3g0s" data-title="MyBatisPlus的代码生成器模板（IDEA+MAVEN）" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatisPlus/" rel="tag">MyBatisPlus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag">代码生成器</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blank-ys.github.io/tags/MyBatisPlus/" rel="tag">MyBatisPlus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blank-ys.github.io/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag">代码生成器</a></li></ul>
 
     </footer>
   </div>
@@ -130,7 +130,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/09/15/SpringBoot%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84qq%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/Blank-ys.github.io/2023/09/15/SpringBoot%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84qq%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -140,7 +140,7 @@
     </a>
   
   
-    <a href="/2023/09/15/SpringBootTest-Autowired-DataSource-%E5%87%BA%E7%8E%B0%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/Blank-ys.github.io/2023/09/15/SpringBootTest-Autowired-DataSource-%E5%87%BA%E7%8E%B0%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
       <div class="article-nav-title">SpringBootTest @Autowired DataSource 出现空指针异常</div>
     </a>
@@ -159,7 +159,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Excel/">Excel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatisPlus/">MyBatisPlus</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SSM/">SSM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%82%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%B0%BF/">异常记录簿</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">用户认证</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/Excel/">Excel</a></li><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/MyBatisPlus/">MyBatisPlus</a></li><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/SSM/">SSM</a></li><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/SpringBoot/">SpringBoot</a></li><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/%E5%BC%82%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%B0%BF/">异常记录簿</a></li><li class="category-list-item"><a class="category-list-link" href="/Blank-ys.github.io/categories/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">用户认证</a></li></ul>
     </div>
   </div>
 
@@ -169,7 +169,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/" rel="tag">Exception</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatisPlus/" rel="tag">MyBatisPlus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" rel="tag">MyBatis逆向工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM%E6%95%B4%E5%90%88/" rel="tag">SSM整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sa-Token/" rel="tag">Sa-Token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hutool/" rel="tag">hutool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qq%E9%82%AE%E4%BB%B6/" rel="tag">qq邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag">代码生成器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" rel="tag">文件下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA/" rel="tag">文件导出</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" rel="tag">用户认证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8/" rel="tag">类型转换器</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/Excel/" rel="tag">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/Exception/" rel="tag">Exception</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/MyBatisPlus/" rel="tag">MyBatisPlus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" rel="tag">MyBatis逆向工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/SSM%E6%95%B4%E5%90%88/" rel="tag">SSM整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/Sa-Token/" rel="tag">Sa-Token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/SpringBoot/" rel="tag">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/hutool/" rel="tag">hutool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/qq%E9%82%AE%E4%BB%B6/" rel="tag">qq邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag">代码生成器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" rel="tag">文件下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA/" rel="tag">文件导出</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" rel="tag">用户认证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blank-ys.github.io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8/" rel="tag">类型转换器</a></li></ul>
     </div>
   </div>
 
@@ -179,7 +179,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Excel/" style="font-size: 15px;">Excel</a> <a href="/tags/Exception/" style="font-size: 20px;">Exception</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MyBatisPlus/" style="font-size: 10px;">MyBatisPlus</a> <a href="/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" style="font-size: 10px;">MyBatis逆向工程</a> <a href="/tags/SSM%E6%95%B4%E5%90%88/" style="font-size: 10px;">SSM整合</a> <a href="/tags/Sa-Token/" style="font-size: 10px;">Sa-Token</a> <a href="/tags/SpringBoot/" style="font-size: 17.5px;">SpringBoot</a> <a href="/tags/hutool/" style="font-size: 10px;">hutool</a> <a href="/tags/qq%E9%82%AE%E4%BB%B6/" style="font-size: 10px;">qq邮件</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 10px;">代码生成器</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 10px;">文件上传</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">文件下载</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA/" style="font-size: 10px;">文件导出</a> <a href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" style="font-size: 10px;">用户认证</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8/" style="font-size: 10px;">类型转换器</a>
+      <a href="/Blank-ys.github.io/tags/Excel/" style="font-size: 15px;">Excel</a> <a href="/Blank-ys.github.io/tags/Exception/" style="font-size: 20px;">Exception</a> <a href="/Blank-ys.github.io/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/Blank-ys.github.io/tags/Map/" style="font-size: 10px;">Map</a> <a href="/Blank-ys.github.io/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/Blank-ys.github.io/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/Blank-ys.github.io/tags/MyBatisPlus/" style="font-size: 10px;">MyBatisPlus</a> <a href="/Blank-ys.github.io/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" style="font-size: 10px;">MyBatis逆向工程</a> <a href="/Blank-ys.github.io/tags/SSM%E6%95%B4%E5%90%88/" style="font-size: 10px;">SSM整合</a> <a href="/Blank-ys.github.io/tags/Sa-Token/" style="font-size: 10px;">Sa-Token</a> <a href="/Blank-ys.github.io/tags/SpringBoot/" style="font-size: 17.5px;">SpringBoot</a> <a href="/Blank-ys.github.io/tags/hutool/" style="font-size: 10px;">hutool</a> <a href="/Blank-ys.github.io/tags/qq%E9%82%AE%E4%BB%B6/" style="font-size: 10px;">qq邮件</a> <a href="/Blank-ys.github.io/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 10px;">代码生成器</a> <a href="/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 10px;">文件上传</a> <a href="/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">文件下载</a> <a href="/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA/" style="font-size: 10px;">文件导出</a> <a href="/Blank-ys.github.io/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" style="font-size: 10px;">用户认证</a> <a href="/Blank-ys.github.io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8/" style="font-size: 10px;">类型转换器</a>
     </div>
   </div>
 
@@ -188,7 +188,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blank-ys.github.io/archives/2023/09/">九月 2023</a></li></ul>
     </div>
   </div>
 
@@ -201,23 +201,23 @@
       <ul>
         
           <li>
-            <a href="/2023/09/15/Hexo_tutorial/">Hexo tutorial</a>
+            <a href="/Blank-ys.github.io/2023/09/15/Hexo_tutorial/">Hexo tutorial</a>
           </li>
         
           <li>
-            <a href="/2023/09/15/Java%E5%AE%9E%E7%8E%B0%E5%AF%BC%E5%87%BAexcel%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0/">Java实现导出excel文件到本地</a>
+            <a href="/Blank-ys.github.io/2023/09/15/Java%E5%AE%9E%E7%8E%B0%E5%AF%BC%E5%87%BAexcel%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0/">Java实现导出excel文件到本地</a>
           </li>
         
           <li>
-            <a href="/2023/09/15/EasyExcel%E5%AE%9E%E7%8E%B0excel%E6%96%87%E4%BB%B6%E9%87%8D%E5%A4%8D%E5%A4%9A%E6%AC%A1%E5%86%99%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA-%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/">EasyExcel实现excel文件重复多次写入和导出&amp;下载文件</a>
+            <a href="/Blank-ys.github.io/2023/09/15/EasyExcel%E5%AE%9E%E7%8E%B0excel%E6%96%87%E4%BB%B6%E9%87%8D%E5%A4%8D%E5%A4%9A%E6%AC%A1%E5%86%99%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA-%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/">EasyExcel实现excel文件重复多次写入和导出&amp;下载文件</a>
           </li>
         
           <li>
-            <a href="/2023/09/15/springboot%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/">springboot实现文件上传和下载</a>
+            <a href="/Blank-ys.github.io/2023/09/15/springboot%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/">springboot实现文件上传和下载</a>
           </li>
         
           <li>
-            <a href="/2023/09/15/Springboot%E4%BD%BF%E7%94%A8hutool%E5%AE%9E%E7%8E%B0Excel%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E5%8A%9F%E8%83%BD/">Springboot使用hutool实现Excel文件导入导出功能</a>
+            <a href="/Blank-ys.github.io/2023/09/15/Springboot%E4%BD%BF%E7%94%A8hutool%E5%AE%9E%E7%8E%B0Excel%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E5%8A%9F%E8%83%BD/">Springboot使用hutool实现Excel文件导入导出功能</a>
           </li>
         
       </ul>
@@ -242,25 +242,25 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/Blank-ys.github.io/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/Blank-ys.github.io/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="/Blank-ys.github.io/js/jquery-3.6.4.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="/Blank-ys.github.io/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+<script src="/Blank-ys.github.io/js/script.js"></script>
 
 
 
