@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/springboot-Got-bad-greeting-from-SMTP-host-smtp-qq-com-port-465-response-EOF/" data-id="clmkqjb5m000wvkad2iddeyj7" data-title="springboot Got bad greeting from SMTP host: smtp.qq.com, port: 465, response: [EOF]" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/15/springboot-Got-bad-greeting-from-SMTP-host-smtp-qq-com-port-465-response-EOF/" data-id="clmkrz4hx000ws4adfxf3ew1j" data-title="springboot Got bad greeting from SMTP host: smtp.qq.com, port: 465, response: [EOF]" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -149,13 +149,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="JavaMailSender的send方法报错Local-address-contains-illegal-character-in-string"><a href="#JavaMailSender的send方法报错Local-address-contains-illegal-character-in-string" class="headerlink" title="JavaMailSender的send方法报错Local address contains illegal character in string"></a>JavaMailSender的send方法报错Local address contains illegal character in string</h1><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>本来以为是接收到的参数问题，结果让前端修改了格式还是报错<br>最后在controller打印信息发现是接收参数方式错了<br>前端传的email是JSON对象，类似{“email”:”<a href="mailto:&#x78;&#120;&#120;&#x40;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;">&#x78;&#120;&#120;&#x40;&#113;&#x71;&#46;&#99;&#x6f;&#x6d;</a>“}，而我直接使用<br>@RequestParam(“email”) String email接收，自然就报错了</p>
+        <h1 id="JavaMailSender的send方法报错Local-address-contains-illegal-character-in-string"><a href="#JavaMailSender的send方法报错Local-address-contains-illegal-character-in-string" class="headerlink" title="JavaMailSender的send方法报错Local address contains illegal character in string"></a>JavaMailSender的send方法报错Local address contains illegal character in string</h1><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>本来以为是接收到的参数问题，结果让前端修改了格式还是报错<br>最后在controller打印信息发现是接收参数方式错了<br>前端传的email是JSON对象，类似{“email”:”<a href="mailto:&#x78;&#x78;&#x78;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#x78;&#x78;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a>“}，而我直接使用<br>@RequestParam(“email”) String email接收，自然就报错了</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>将接收参数的方式改为@RequestBody Map&lt;String,Object&gt; map<br>使用map.get(“email”)获取值即可</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/Resolved-org-springframework-web-bind-MissingServletRequestParameterException-Required-request-parameter-email-for-method-parameter-type-String-is-not-present/" data-id="clmkqjb5k000jvkadhnxq6qf7" data-title="Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter email for method parameter type String is not present]" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/15/Resolved-org-springframework-web-bind-MissingServletRequestParameterException-Required-request-parameter-email-for-method-parameter-type-String-is-not-present/" data-id="clmkrz4ht000gs4ad3li1fua4" data-title="Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter email for method parameter type String is not present]" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -203,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/IDEA-unable-to-access-https-github-com-Blank-xxx-git-error-setting-certificate-verif/" data-id="clmkqjb5i000cvkadcs8cgtdd" data-title="IDEA unable to access https://github.com/Blank/xxx.git/: error setting certificate verif" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/15/IDEA-unable-to-access-https-github-com-Blank-xxx-git-error-setting-certificate-verif/" data-id="clmkrz4hr0008s4ade99i9p28" data-title="IDEA unable to access https://github.com/Blank/xxx.git/: error setting certificate verif" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -261,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/SSM%E6%95%B4%E5%90%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E6%90%AD%E5%BB%BA/" data-id="clmkqjb5j000hvkadek488fbx" data-title="SSM整合的基本配置搭建" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/15/SSM%E6%95%B4%E5%90%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E6%90%AD%E5%BB%BA/" data-id="clmkrz4hu000is4add2gc8mc0" data-title="SSM整合的基本配置搭建" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -315,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/SpringBoot%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84qq%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/" data-id="clmkqjb5k000nvkad72t3673c" data-title="SpringBoot实现简单的qq邮箱发送邮件功能" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/15/SpringBoot%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84qq%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/" data-id="clmkrz4hw000ps4ad58aibnxt" data-title="SpringBoot实现简单的qq邮箱发送邮件功能" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -368,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/" data-id="clmkqjb5i000dvkad5wecgjdx" data-title="MyBatisPlus的代码生成器模板（IDEA+MAVEN）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/15/MyBatisPlus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E6%A8%A1%E6%9D%BF%EF%BC%88IDEA-MAVEN%EF%BC%89/" data-id="clmkrz4hs000bs4ad3mbvfpez" data-title="MyBatisPlus的代码生成器模板（IDEA+MAVEN）" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -420,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/15/SpringBootTest-Autowired-DataSource-%E5%87%BA%E7%8E%B0%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8/" data-id="clmkqjb5l000pvkad7u2lbhr7" data-title="SpringBootTest @Autowired DataSource 出现空指针异常" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/15/SpringBootTest-Autowired-DataSource-%E5%87%BA%E7%8E%B0%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8/" data-id="clmkrz4hv000ns4ad2awc70ye" data-title="SpringBootTest @Autowired DataSource 出现空指针异常" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -473,7 +473,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blank-ys.github.io/2023/09/14/IDEA-MAVEN-JAVA%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95%E7%9A%84%E7%AE%80%E5%8D%95MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" data-id="clmkqjb5g0008vkadeuclf1sb" data-title="IDEA+MAVEN+JAVA代码测试的简单MyBatis逆向工程" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://blank-ys.github.io/2023/09/14/IDEA-MAVEN-JAVA%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95%E7%9A%84%E7%AE%80%E5%8D%95MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" data-id="clmkrz4hq0006s4adaei19jte" data-title="IDEA+MAVEN+JAVA代码测试的简单MyBatis逆向工程" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
