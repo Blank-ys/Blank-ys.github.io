@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>springboot集成sa-token框架实现用户认证功能（使用注解形式，代码量极少） | Blank-ys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="轻量级框架sa-token（已集成redis），只需调用api即可实现认证功能0、导入sa-token依赖12345678910111213141516171819&lt;dependency&gt;	&lt;groupId&gt;cn.dev33&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;sa-token-spring-boot-starter&lt;&#x2F;artifact">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot集成sa-token框架实现用户认证功能（使用注解形式，代码量极少）">
+<meta property="og:url" content="http://blank-ys.github.io/2023/09/15/springboot%E9%9B%86%E6%88%90sa-token%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%8A%9F%E8%83%BD%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BD%A2%E5%BC%8F%EF%BC%8C%E4%BB%A3%E7%A0%81%E9%87%8F%E6%9E%81%E5%B0%91%EF%BC%89/index.html">
+<meta property="og:site_name" content="Blank-ys">
+<meta property="og:description" content="轻量级框架sa-token（已集成redis），只需调用api即可实现认证功能0、导入sa-token依赖12345678910111213141516171819&lt;dependency&gt;	&lt;groupId&gt;cn.dev33&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;sa-token-spring-boot-starter&lt;&#x2F;artifact">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blank-ys.github.io/images/2481606-20211124165232565-604143220.png">
+<meta property="article:published_time" content="2023-09-15T12:51:10.000Z">
+<meta property="article:modified_time" content="2023-09-15T13:36:32.600Z">
+<meta property="article:author" content="Blank-ys">
+<meta property="article:tag" content="SpringBoot">
+<meta property="article:tag" content="Sa-Token">
+<meta property="article:tag" content="用户认证">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blank-ys.github.io/images/2481606-20211124165232565-604143220.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Blank-ys" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blank-ys</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Blank-ys.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-springboot集成sa-token框架实现用户认证功能（使用注解形式，代码量极少）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/15/springboot%E9%9B%86%E6%88%90sa-token%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%8A%9F%E8%83%BD%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BD%A2%E5%BC%8F%EF%BC%8C%E4%BB%A3%E7%A0%81%E9%87%8F%E6%9E%81%E5%B0%91%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-09-15T12:51:10.000Z" itemprop="datePublished">2023-09-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">用户认证</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      springboot集成sa-token框架实现用户认证功能（使用注解形式，代码量极少）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="轻量级框架sa-token（已集成redis），只需调用api即可实现认证功能"><a href="#轻量级框架sa-token（已集成redis），只需调用api即可实现认证功能" class="headerlink" title="轻量级框架sa-token（已集成redis），只需调用api即可实现认证功能"></a>轻量级框架sa-token（已集成redis），只需调用api即可实现认证功能</h2><h3 id="0、导入sa-token依赖"><a href="#0、导入sa-token依赖" class="headerlink" title="0、导入sa-token依赖"></a>0、导入sa-token依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.dev33<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sa-token-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.27.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Sa-Token 整合 Redis （使用jackson序列化方式） --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Sa-token默认将会话数据保存在内存中，此模式读写速度最快，且避免了序列化与反序列化带来的性能消耗，</span></span><br><span class="line"><span class="comment">但是此模式也有一些缺点，比如：重启后数据会丢失，无法在集群模式下共享数据。--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--引入以下依赖和配置后，框架会自动使用Redis存储。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.dev33<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sa-token-dao-redis-jackson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.27.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 提供Redis连接池 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1、编写application-yml"><a href="#1、编写application-yml" class="headerlink" title="1、编写application.yml"></a>1、编写application.yml</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sa-Token 配置</span></span><br><span class="line"><span class="attr">sa-token:</span></span><br><span class="line">  <span class="comment"># jwt秘钥</span></span><br><span class="line">  <span class="attr">jwt-secret-key:</span> <span class="string">qwasiniaciasubfiaudas</span></span><br><span class="line">  <span class="comment"># token名称 (同时也是cookie名称)</span></span><br><span class="line">  <span class="attr">token-name:</span> <span class="string">satoken</span></span><br><span class="line">  <span class="comment"># token有效期，单位s 默认30天, -1代表永不过期</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="number">1800</span></span><br><span class="line">  <span class="comment"># token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒</span></span><br><span class="line">  <span class="attr">activity-timeout:</span> <span class="number">-1</span></span><br><span class="line">  <span class="comment"># 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)</span></span><br><span class="line">  <span class="attr">is-concurrent:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)</span></span><br><span class="line">  <span class="attr">is-share:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># token风格</span></span><br><span class="line">  <span class="attr">token-style:</span> <span class="string">uuid</span></span><br><span class="line">  <span class="comment"># 是否输出操作日志</span></span><br><span class="line">  <span class="attr">is-log:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、写一个配置类，使用SaAnnotationInterceptor注解拦截请求"><a href="#2、写一个配置类，使用SaAnnotationInterceptor注解拦截请求" class="headerlink" title="2、写一个配置类，使用SaAnnotationInterceptor注解拦截请求"></a>2、写一个配置类，使用SaAnnotationInterceptor注解拦截请求</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SaTokenConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 拦截标注<span class="doctag">@SaCheckLogin</span>的类或方法，必须登录才能通过校验</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> registry</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">SaAnnotationInterceptor</span>()).addPathPatterns(<span class="string">&quot;/**&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line">        <span class="comment">//解决静态资源无法访问</span></span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .addResourceLocations(<span class="string">&quot;classpath:/static/&quot;</span>);</span><br><span class="line">        <span class="comment">//解决swagger无法访问</span></span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/swagger-ui.html&quot;</span>)</span><br><span class="line">                .addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line">        <span class="comment">//解决swagger的js文件无法访问</span></span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>)</span><br><span class="line">                .addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/webjars&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：静态资源配置只需在application.yml或者配置类中的一个进行配置即可，否则不生效！（作者遇到的错误）</strong></p>
+<h3 id="3、登录和注销使用的方法"><a href="#3、登录和注销使用的方法" class="headerlink" title="3、登录和注销使用的方法"></a>3、登录和注销使用的方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当前用户登录，loginId为10001</span></span><br><span class="line">StpUtil.login(<span class="number">10001</span>);</span><br><span class="line"><span class="comment">//获取当前用户登录的token信息，里面的tokenName和tokenValue在前端进行保存，</span></span><br><span class="line"><span class="comment">//前端在调用请求时携带在header中（格式为&#123;tokenName: tokenValue&#125;）</span></span><br><span class="line">StpUtil.getTokenInfo();</span><br><span class="line"></span><br><span class="line"><span class="comment">//用户注销，将loginId传入即可</span></span><br><span class="line">StpUtil.logout(<span class="number">10001</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="4、在需要拦截的类或方法上标注-SaCheckLogin注解"><a href="#4、在需要拦截的类或方法上标注-SaCheckLogin注解" class="headerlink" title="4、在需要拦截的类或方法上标注@SaCheckLogin注解"></a>4、在需要拦截的类或方法上标注@SaCheckLogin注解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Example：</span><br><span class="line"><span class="meta">@SaCheckLogin</span></span><br><span class="line"><span class="keyword">public</span> R <span class="title function_">logout</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"><span class="meta">@SaCheckLogin</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TopicController</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5、测试"><a href="#5、测试" class="headerlink" title="5、测试"></a>5、测试</h3><h6 id="登录返回结果示例如下："><a href="#登录返回结果示例如下：" class="headerlink" title="登录返回结果示例如下："></a>登录返回结果示例如下：</h6><p><img src="/../images/2481606-20211124165232565-604143220.png" alt="image"></p>
+<h4 id="最后，附上sa-token的官方文档"><a href="#最后，附上sa-token的官方文档" class="headerlink" title="最后，附上sa-token的官方文档"></a>最后，附上sa-token的<a target="_blank" rel="noopener" href="https://sa-token.dev33.cn/doc/index.html#/" title="官方文档">官方文档</a></h4><p>有兴趣的小伙伴可以去尝试其他功能噢！<br>若有误，欢迎评论区指正哈~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blank-ys.github.io/2023/09/15/springboot%E9%9B%86%E6%88%90sa-token%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%8A%9F%E8%83%BD%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BD%A2%E5%BC%8F%EF%BC%8C%E4%BB%A3%E7%A0%81%E9%87%8F%E6%9E%81%E5%B0%91%EF%BC%89/" data-id="clmkqdn6b0015p8ad9n55h1ki" data-title="springboot集成sa-token框架实现用户认证功能（使用注解形式，代码量极少）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sa-Token/" rel="tag">Sa-Token</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" rel="tag">用户认证</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/09/15/%E3%80%90Java%E3%80%91Swap%E5%AE%9E%E7%8E%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          【Java】Swap实现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/09/15/springboot-Got-bad-greeting-from-SMTP-host-smtp-qq-com-port-465-response-EOF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">springboot Got bad greeting from SMTP host: smtp.qq.com, port: 465, response: [EOF]</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Excel/">Excel</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MyBatisPlus/">MyBatisPlus</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SSM/">SSM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%82%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%B0%BF/">异常记录簿</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">用户认证</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/" rel="tag">Exception</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatisPlus/" rel="tag">MyBatisPlus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" rel="tag">MyBatis逆向工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM%E6%95%B4%E5%90%88/" rel="tag">SSM整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sa-Token/" rel="tag">Sa-Token</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hutool/" rel="tag">hutool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qq%E9%82%AE%E4%BB%B6/" rel="tag">qq邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag">代码生成器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" rel="tag">文件下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA/" rel="tag">文件导出</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" rel="tag">用户认证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8/" rel="tag">类型转换器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Excel/" style="font-size: 15px;">Excel</a> <a href="/tags/Exception/" style="font-size: 20px;">Exception</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MyBatisPlus/" style="font-size: 10px;">MyBatisPlus</a> <a href="/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" style="font-size: 10px;">MyBatis逆向工程</a> <a href="/tags/SSM%E6%95%B4%E5%90%88/" style="font-size: 10px;">SSM整合</a> <a href="/tags/Sa-Token/" style="font-size: 10px;">Sa-Token</a> <a href="/tags/SpringBoot/" style="font-size: 17.5px;">SpringBoot</a> <a href="/tags/hutool/" style="font-size: 10px;">hutool</a> <a href="/tags/qq%E9%82%AE%E4%BB%B6/" style="font-size: 10px;">qq邮件</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 10px;">代码生成器</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 10px;">文件上传</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" style="font-size: 12.5px;">文件下载</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA/" style="font-size: 10px;">文件导出</a> <a href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" style="font-size: 10px;">用户认证</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8/" style="font-size: 10px;">类型转换器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/09/15/Hexo_tutorial/">Hexo tutorial</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/Java%E5%AE%9E%E7%8E%B0%E5%AF%BC%E5%87%BAexcel%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0/">Java实现导出excel文件到本地</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/EasyExcel%E5%AE%9E%E7%8E%B0excel%E6%96%87%E4%BB%B6%E9%87%8D%E5%A4%8D%E5%A4%9A%E6%AC%A1%E5%86%99%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA-%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/">EasyExcel实现excel文件重复多次写入和导出&amp;下载文件</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/springboot%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/">springboot实现文件上传和下载</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/Springboot%E4%BD%BF%E7%94%A8hutool%E5%AE%9E%E7%8E%B0Excel%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E5%8A%9F%E8%83%BD/">Springboot使用hutool实现Excel文件导入导出功能</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Blank-ys<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
