@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://blank-ys.github.io/Blank-ys.github.io/2023/09/15/Resolved-org-springframework-web-bind-MissingServletRequestParameterException-Required-request-parameter-email-for-method-parameter-type-String-is-not-present/</loc>
+    <loc>https://blank-ys.github.io/Blank-ys.github.io/2023/09/15/SSM%E6%95%B4%E5%90%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E6%90%AD%E5%BB%BA/</loc>
     
     <lastmod>2023-09-15</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://blank-ys.github.io/Blank-ys.github.io/2023/09/15/SSM%E6%95%B4%E5%90%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://blank-ys.github.io/Blank-ys.github.io/2023/09/15/Resolved-org-springframework-web-bind-MissingServletRequestParameterException-Required-request-parameter-email-for-method-parameter-type-String-is-not-present/</loc>
     
     <lastmod>2023-09-15</lastmod>
     
@@ -291,13 +291,6 @@
   </url>
   
   <url>
-    <loc>https://blank-ys.github.io/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blank-ys.github.io/Blank-ys.github.io/tags/Sa-Token/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -306,6 +299,13 @@
   
   <url>
     <loc>https://blank-ys.github.io/Blank-ys.github.io/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blank-ys.github.io/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
