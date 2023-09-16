@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://blank-ys.github.io/Blank-ys.github.io/2023/09/15/springboot%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</loc>
+    <loc>http://blank-ys.github.io/Blank-ys.github.io/2023/09/15/springboot%E9%9B%86%E6%88%90sa-token%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%8A%9F%E8%83%BD%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BD%A2%E5%BC%8F%EF%BC%8C%E4%BB%A3%E7%A0%81%E9%87%8F%E6%9E%81%E5%B0%91%EF%BC%89/</loc>
     
     <lastmod>2023-09-15</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://blank-ys.github.io/Blank-ys.github.io/2023/09/15/springboot%E9%9B%86%E6%88%90sa-token%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%8A%9F%E8%83%BD%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BD%A2%E5%BC%8F%EF%BC%8C%E4%BB%A3%E7%A0%81%E9%87%8F%E6%9E%81%E5%B0%91%EF%BC%89/</loc>
+    <loc>http://blank-ys.github.io/Blank-ys.github.io/2023/09/15/springboot%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</loc>
     
     <lastmod>2023-09-15</lastmod>
     
@@ -235,20 +235,6 @@
   </url>
   
   <url>
-    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/Maven/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/MyBatisPlus/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -264,6 +250,20 @@
   
   <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/SSM%E6%95%B4%E5%90%88/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/MyBatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/Maven/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -291,13 +291,6 @@
   </url>
   
   <url>
-    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/Sa-Token/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -313,6 +306,13 @@
   
   <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/Map/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blank-ys.github.io/Blank-ys.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -349,13 +349,6 @@
   </url>
   
   <url>
-    <loc>http://blank-ys.github.io/Blank-ys.github.io/categories/MyBatis/</loc>
-    <lastmod>2023-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/categories/MyBatisPlus/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -364,6 +357,13 @@
   
   <url>
     <loc>http://blank-ys.github.io/Blank-ys.github.io/categories/SSM/</loc>
+    <lastmod>2023-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blank-ys.github.io/Blank-ys.github.io/categories/MyBatis/</loc>
     <lastmod>2023-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
